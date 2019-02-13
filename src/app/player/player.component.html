@@ -1,0 +1,41 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      {{ songData.name }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ songData.artist }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{songData.cover_art_url}}" [alt]="songData.album" class="img">
+  <mat-card-actions>
+    <div class="button-wrapper">
+      <button mat-button (click)="previousSong()" class="action-button">
+        <i class="fas fa-2x fa-backward"></i>
+      </button>
+      <button mat-button (click)="playSong()" *ngIf="!playing" class="action-button">
+        <i class="fas fa-2x fa-play"></i>
+      </button>
+      <button mat-button (click)="pauseSong()" *ngIf="playing" class="action-button">
+        <i class="fas fa-2x fa-pause"></i>
+      </button>
+      <button mat-button (click)="nextSong()" class="action-button">
+        <i class="fas fa-2x fa-forward"></i>
+      </button>
+    </div>
+    <!-- <button mat-button (click)="toggleShuffle()">
+      <i class="fas fa-2x fa-random"></i>
+    </button>
+    <button mat-button class="action-button">
+      <span class="amplitude-volume-up">
+        <i class="fas fa-2x fa-volume-up"></i>
+      </span>
+    </button>
+    <button mat-button class="action-button">
+      <span class="amplitude-volume-down">
+        <i class="fas fa-2x fa-volume-down"></i>
+      </span>
+    </button>
+    -->
+  </mat-card-actions>
+</mat-card>
